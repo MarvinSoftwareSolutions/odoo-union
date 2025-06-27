@@ -1,0 +1,162 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="union_affiliation_affiliate_form">
+            <field name="name">union_affiliation.affiliate.form</field>
+            <field name="model">affiliation.affiliate</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button string="Affiliate" class="btn btn-primary" type="object" name="affiliate_" states="disaffiliated,historical,not_affiliated,new" groups="union_affiliation.group_affiliation_change_state"/>
+                        <button string="Set Contributor" class="btn btn-primary" type="object" name="set_contributor" states="affiliated" groups="union_affiliation.group_affiliation_change_quote"/>
+                        <button string="Confirm affiliation" class="btn btn-secondary" type="object" name="confirm_affiliation_" states="pending_suscribe" groups="union_affiliation.group_affiliation_change_state"/>
+                        <button string="Disaffiliate" class="btn btn-secondary" type="object" name="disaffiliate_" states="affiliated" groups="union_affiliation.group_affiliation_change_state"/>
+                        <button string="Confirm dissafiliation" class="btn btn-secondary" type="object" name="confirm_dissafiliation_" states="pending_unsuscribe" groups="union_affiliation.group_affiliation_change_state"/>
+                        <button string="Archive" class="btn btn-secondary" type="object" name="archive_" states="affiliated" groups="union_affiliation.group_affiliation_change_state"/>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <h2>
+                            <field name="name"/>
+                        </h2>
+                        <group>
+                            <group string="Employment infomation" name="personal_information">
+                                <field name="uid" attrs="{'readonly': [('state','in',['pending_suscribe','affiliated','pending_unsuscribe','disaffiliated','historical'])]}"/>
+                                <field name="affiliate_type_id"/>
+                                <field name="seniority" string="Antigüedad"/>
+                                <separator string="Personal information"/>
+                                <field name="personal_id_type"/>
+                                <field name="personal_id"/>
+                                <field name="vat" string="CUIL"/>
+                                <field name="gender"/>
+                                <field name="civil_status"/>
+                                <field name="birth_date"/>
+                                <field name="birth_country"/>
+                            </group>
+                            <group string="Contact information" name="contact_information">
+                                <field name="email"/>
+                                <field name="email2"/>
+                                <field name="phone"/>
+                                <field name="mobile"/>
+                                <field name="street"/>
+                                <field name="city"/>
+                                <field name="state_id"/>
+                                <field name="country_id"/>
+                                <field name="category_id" widget="many2many_tags"/>
+                                <field name="category_bis_id" widget="many2many_tags"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Affiliation" name="Affiliation">
+                                <group>
+                                    <field name="affiliation_number" readonly="1"/>
+                                    <field name="quote" readonly="1" />
+                                    <field name="affiliation_date" readonly="1" />
+                                    <field name="disaffiliation_date" readonly="1"/>
+                                </group>
+                            </page>
+                            <page string="Affiliate logs" name="Affiliation_logs">
+                                <field name="log" readonly="1"/>
+                            </page>
+                            <page string="Childs" name="Childs">
+                                <field name="affiliate_child_ids"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="union_affiliation_affiliate_tree">
+            <field name="name">union_affiliation.affiliate.tree</field>
+            <field name="model">affiliation.affiliate</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="uid" />
+                    <field name="affiliate_type_id" />
+                    <field name="personal_id" />
+                    <field name="gender" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="union_affiliation_affiliate_search" model="ir.ui.view">
+            <field name="name">union_affiliation.affiliate.search</field>
+            <field name="model">affiliation.affiliate</field>
+            <field name="arch" type="xml">
+                <search string="Affiliate filters">
+                    <field name="name" filter_domain="[('name', 'ilike', self)]"/>
+                    <field name="uid" filter_domain="[('uid', 'ilike', self)]"/>
+                    <field name="personal_id" filter_domain="[('personal_id', 'ilike', self)]"/>
+                    <field name="category_bis_id" filter_domain="[('category_bis_id', 'ilike', self)]"/>
+
+                    <filter string="New" name="state_new" domain="[('state', '=', 'new')]"/>
+                    <filter string="Not affiliated" name="state_not_affiliated" domain="[('state', '=', 'not_affiliated')]"/>
+                    <filter string="Pending suscribe" name="state_pending_suscribe" domain="[('state', '=', 'pending_suscribe')]"/>
+                    <filter string="Affiliated" name="state_affiliated" domain="[('state', '=', 'affiliated')]"/>
+                    <filter string="Pending unsuscribe" name="state_pending_unsuscribe" domain="[('state', '=', 'pending_unsuscribe')]"/>
+                    <filter string="Disaffiliated" name="state_disaffiliated" domain="[('state', '=', 'disaffiliated')]"/>
+                    <filter string="Historical" name="state_historical" domain="[('state', '=', 'historical')]"/>
+                    <field name="state" />
+                    <separator/>
+                    <filter string="Contributors" name="contributors" domain="[('quote', '=', True)]"/>
+                    <filter string="Not Contributors" name="not_contributors" domain="[('quote', '=', False)]"/>
+                    <field name="quote" />
+                    <separator/>
+
+                    <group expand="1" string="Group By">
+                        <filter string="Contributors" name='contributors' context="{'group_by':'quote'}"/>
+                        <filter string="State" name='contributors' context="{'group_by':'state'}"/>
+                        <filter string="Type" name="type" context="{'group_by':'affiliate_type_id'}"/>
+                        <filter string="Affiliation date" name="affiliation_date" context="{'group_by':'affiliation_date'}"/>
+                        <filter string="Disafilliation date" name="disaffiliation_date" context="{'group_by':'disaffiliation_date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="union_affiliation_affiliate_emails_tree">
+            <field name="name">union_affiliation.affiliate.emails.tree</field>
+            <field name="model">affiliation.affiliate</field>
+            <field name="arch" type="xml">
+                <tree create="false" edit="false" delete="false">
+                    <field name="name" />
+                    <field name="email" />
+                    <field name="email2" />
+                    <field name="phone" />
+                    <field name="mobile" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Based on mail/views/res_partner_views.xml  -->
+        <act_window name="Send email"
+            res_model="mail.compose.message"
+            binding_model="affiliation.affiliate"
+            binding_views="list"
+            view_mode="form"
+            target="new"
+            id="action_affiliate_mass_mail"
+            context="{'default_composition_mode': 'mass_mail'}"
+        />
+
+        <act_window name="Send email"
+            res_model="mail.compose.message"
+            binding_model="affiliation.affiliate"
+            binding_views="form"
+            view_mode="form"
+            target="new"
+            id="action_affiliate_mass_mail_form"
+        />
+
+    </data>
+</odoo>

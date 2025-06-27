@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="union_affiliation_affiliate_type_form">
+            <field name="name">union_affiliation.affiliate_type.form</field>
+            <field name="model">affiliation.affiliate_type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="enabled" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="union_affiliation_affiliate_type_tree">
+            <field name="name">union_affiliation.affiliate_type.tree</field>
+            <field name="model">affiliation.affiliate_type</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name" />
+                    <field name="enabled" />
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

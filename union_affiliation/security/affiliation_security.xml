@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="group_affiliation_read" model="res.groups">
+        <field name="name">Affiliation read</field>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+    </record>
+
+    <record id="group_affiliation_write" model="res.groups">
+        <field name="name">Affiliation write</field>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        <field name="implied_ids" eval="[(4, ref('group_affiliation_read'))]"/>
+    </record>
+
+    <record id="group_affiliation_admin" model="res.groups">
+        <field name="name">Affiliation admin</field>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        <field name="implied_ids" eval="[(4, ref('group_affiliation_write'))]"/>
+    </record>
+
+    <record id="group_affiliation_change_state" model="res.groups">
+        <field name="name">Affiliation change state</field>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        <field name="implied_ids" eval="[(4, ref('group_affiliation_write'))]"/>
+    </record>
+
+    <record id="group_affiliation_change_quote" model="res.groups">
+        <field name="name">Affiliation change quote</field>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        <field name="implied_ids" eval="[(4, ref('group_affiliation_write'))]"/>
+    </record>
+
+    <record id="group_affiliation_emails" model="res.groups">
+        <field name="name">Affiliation emails</field>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        <field name="implied_ids" eval="[(4, ref('group_affiliation_read'))]"/>
+    </record>
+
+</odoo>

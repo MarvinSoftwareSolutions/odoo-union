@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="affiliation_affiliation_number_form">
+            <field name="name">union_affiliation.affiliation.number.form</field>
+            <field name="model">affiliation.affiliation_number</field>
+            <field name="arch" type="xml">
+                <form create="false">
+                    <sheet>
+                        <h3>Confirmación de Afiliación</h3>
+                        <group>
+                            <field name="affiliate_id" readonly="1"/>
+                            <field name="affiliation_number_edition" invisible="1"/>
+                            <field name="affiliation_number" attrs="{'readonly': [('affiliation_number_edition', '=', False)]}" />
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button string="Confirm" name="confirm" class="btn btn-primary" type="object"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

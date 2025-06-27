@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem name="Union" id="union_affiliation.union" sequence="40" 
+        groups="group_affiliation_read"/>
+
+    <!-- Affiliates section -->
+    <menuitem name="Affiliates" id="union_affiliation.affiliates_section" 
+        sequence="10" parent="union_affiliation.union" 
+        groups="group_affiliation_read"/>
+
+    <record model="ir.actions.act_window" id="union_affiliation_affiliate_list_action">
+        <field name="name">Affiliates list</field>
+        <field name="res_model">affiliation.affiliate</field>
+        <field name="view_id" ref="union_affiliation_affiliate_tree"/>
+        <field name="view_mode">tree,form</field> 
+    </record>
+
+    <menuitem name="Affiliates list" 
+        id="union_affiliation_affiliate_list" 
+        sequence="10" parent="union_affiliation.affiliates_section" 
+        action="union_affiliation_affiliate_list_action"
+        groups="group_affiliation_read"/>
+
+    <record model="ir.actions.act_window" id="union_affiliation_affiliate_emails_list_action">
+        <field name="name">Affiliate emails</field>
+        <field name="res_model">affiliation.affiliate</field>
+        <field name="view_id" ref="union_affiliation_affiliate_emails_tree"/>
+        <field name="view_mode">tree,form</field> 
+    </record>
+
+    <menuitem name="Affiliate emails" 
+        id="union_affiliation_affiliate_emails_list" 
+        sequence="20" parent="union_affiliation.affiliates_section" 
+        action="union_affiliation_affiliate_emails_list_action"
+        groups="group_affiliation_emails"/>
+
+    <record model="ir.actions.act_window" id="union_affiliation_affiliate_child_list_action">
+        <field name="name">Affiliate's childs</field>
+        <field name="res_model">affiliation.affiliate_child</field>
+        <field name="view_id" ref="union_affiliation_affiliate_child_tree"/>
+        <field name="view_mode">tree,form</field> 
+    </record>
+
+    <menuitem name="Affiliate's childs" 
+        id="union_affiliation_affiliate_child_list" 
+        sequence="30" parent="union_affiliation.affiliates_section" 
+        action="union_affiliation_affiliate_child_list_action"
+        groups="group_affiliation_read"/>
+
+    <record model="ir.actions.act_window" id="union_affiliation_affiliate_type_list_action">
+        <field name="name">Employment relationship types</field>
+        <field name="res_model">affiliation.affiliate_type</field>
+        <field name="view_id" ref="union_affiliation_affiliate_type_tree"/>
+        <field name="view_mode">tree,form</field> 
+    </record>
+
+    <menuitem name="Employment relationship types" 
+        id="union_affiliation_affiliate_type_list" 
+        sequence="20" parent="union_affiliation.affiliates_section" 
+        action="union_affiliation_affiliate_type_list_action"
+        groups="group_affiliation_read"/>
+
+    <!-- Configuration section -->
+    <menuitem name="Configuration" id="union_affiliation.configuration_section" 
+        sequence="100" parent="union_affiliation.union" 
+        groups="group_affiliation_admin"/>
+
+    <record model="ir.actions.act_window" id="union_affiliation_affiliation_configuration_form_action">
+        <field name="name">Affiliation configuration</field>
+        <field name="res_model">affiliation.affiliation_configuration</field>
+        <field name="view_id" ref="union_affiliation_affiliation_configuration_form"/>
+        <field name="view_mode">form</field> 
+        <field name="res_id">1</field>
+    </record>
+
+    <menuitem name="Affiliation configuration" 
+        id="union_affiliation_affiliation_configuration" 
+        sequence="10" parent="union_affiliation.configuration_section" 
+        action="union_affiliation_affiliation_configuration_form_action"
+        groups="group_affiliation_admin"/>
+
+</odoo>

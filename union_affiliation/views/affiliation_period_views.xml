@@ -1,0 +1,36 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="union_affiliation_affiliation_period_form">
+            <field name="name">union_affiliation.affiliate_period.form</field>
+            <field name="model">affiliation.affiliation_period</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="affiliate_state" invisible="1"/>
+                            <field name="affiliate_id" readonly="1"/>
+                            <field name="affiliation_number" attrs="{'readonly': [('closed','=', True)]}"/>
+                            <field name="from_date" attrs="{'readonly':[('affiliate_state','not in',['pending_suscribe','disaffiliated'])]}"/>
+                            <field name="to_date" attrs="{'readonly':[('affiliate_state','!=','pending_unsuscribe')]}"/>
+                            <field name="closed" readonly="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="union_affiliation_affiliation_period_tree">
+            <field name="name">union_affiliation.affiliate_period.tree</field>
+            <field name="model">affiliation.affiliation_period</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="affiliate_id"/>
+                    <field name="affiliation_number"/>
+                    <field name="from_date"/>
+                    <field name="to_date"/>
+                    <field name="closed"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

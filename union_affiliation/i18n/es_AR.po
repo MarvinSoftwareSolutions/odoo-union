@@ -1,0 +1,1283 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-06 22:16+0000\n"
+"PO-Revision-Date: 2023-04-06 22:16+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliation_period.py:0
+#, python-format
+msgid "'From date' is major to 'to date'!"
+msgstr "¡'Fecha desde' es mayor a 'Fecha hasta'!"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__message_needaction
+msgid "Action Needed"
+msgstr "Accion necesaria"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__active_lang_count
+msgid "Active Lang Count"
+msgstr "Recuento de idiomas activo"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__activity_ids
+msgid "Activities"
+msgstr "Ocupaciones"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de excepción de actividad"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__activity_state
+msgid "Activity State"
+msgstr "Estado de actividad"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__type
+msgid "Address Type"
+msgstr "Tipo de dirección"
+
+#. module: union_affiliation
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_form
+msgid "Affiliate"
+msgstr "Afiliar"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_number__affiliate_id
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_period__affiliate_id
+msgid "Affiliate"
+msgstr "Afiliado/a"
+
+#. module: union_affiliation
+#: model:ir.ui.view,name:union_affiliation.affiliation_affiliation_number_form
+#: model_terms:ir.ui.view,arch_db:union_affiliation.affiliation_affiliation_number_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__state
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_period__affiliate_state
+msgid "Affiliate State"
+msgstr "Estado del afiliado"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__uid
+msgid "Affiliate UID"
+msgstr "Legajo"
+
+
+#. module: union_affiliation
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_child_search
+msgid "Affiliate child filters"
+msgstr "Filtro de hijos de afiliados"
+
+#. module: union_affiliation
+#: model:ir.actions.act_window,name:union_affiliation.union_affiliation_affiliate_emails_list_action
+#: model:ir.ui.menu,name:union_affiliation.union_affiliation_affiliate_emails_list
+msgid "Affiliate emails"
+msgstr "Correos electrónicos de afiliados"
+
+#. module: union_affiliation
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_search
+msgid "Affiliate filters"
+msgstr "Filtros de afiliados"
+
+#. module: union_affiliation
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_form
+msgid "Affiliate logs"
+msgstr "Registro de cambios"
+
+#. module: union_affiliation
+#: model:ir.actions.act_window,name:union_affiliation.union_affiliation_affiliate_child_list_action
+#: model:ir.ui.menu,name:union_affiliation.union_affiliation_affiliate_child_list
+msgid "Affiliate's childs"
+msgstr "Hijos de afiliados"
+
+#. module: union_affiliation
+#: model:ir.actions.act_window,name:union_affiliation.union_affiliation_affiliate_type_list_action
+#: model:ir.ui.menu,name:union_affiliation.union_affiliation_affiliate_type_list
+msgid "Employment relationship type"
+msgstr "Tipos de relación laboral"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__state__affiliated
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_search
+msgid "Affiliated"
+msgstr "Afiliado"
+
+#. module: union_affiliation
+#: model:ir.ui.menu,name:union_affiliation.affiliates_section
+msgid "Affiliates"
+msgstr "Afiliados"
+
+#. module: union_affiliation
+#: model:ir.actions.act_window,name:union_affiliation.union_affiliation_affiliate_list_action
+#: model:ir.ui.menu,name:union_affiliation.union_affiliation_affiliate_list
+msgid "Affiliates list"
+msgstr "Lista de afiliados"
+
+#. module: union_affiliation
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliation_number_form
+msgid "Affiliation"
+msgstr "Afiliación"
+
+#. module: union_affiliation
+#: model:res.groups,name:union_affiliation.group_affiliation_admin
+msgid "Affiliation admin"
+msgstr "Administrador de afiliación"
+
+#. module: union_affiliation
+#: model:res.groups,name:union_affiliation.group_affiliation_change_state
+msgid "Affiliation change state"
+msgstr "Cambio de estado de afiliación"
+
+#. module: union_affiliation
+#: model:res.groups,name:union_affiliation.group_affiliation_change_quote
+msgid "Affiliation change quote"
+msgstr "Cambio de estado cotizante"
+
+#. module: union_affiliation
+#: model:res.groups,name:union_affiliation.group_affiliation_emails
+msgid "Affiliation emails"
+msgstr "Correos electrónicos de afiliados"
+
+#. module: union_affiliation
+#: model:ir.actions.act_window,name:union_affiliation.union_affiliation_affiliation_configuration_form_action
+#: model:ir.ui.menu,name:union_affiliation.union_affiliation_affiliation_configuration
+msgid "Affiliation configuration"
+msgstr "Configuración de afiliación"
+
+#. module: union_affiliation
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_search
+msgid "Affiliation date"
+msgstr "Fecha de afiliación"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__affiliation_number
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_number__affiliation_number
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_period__affiliation_number
+msgid "Affiliation number"
+msgstr "Número de afiliación"
+
+#. module: union_affiliation
+#: model:ir.model,name:union_affiliation.model_affiliation_affiliation_period
+msgid "Affiliation period entity"
+msgstr "Entidad del período de afiliación"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__affiliation_period_ids
+msgid "Affiliation periods"
+msgstr "Periodos de afiliación"
+
+#. module: union_affiliation
+#: model:res.groups,name:union_affiliation.group_affiliation_read
+msgid "Affiliation read"
+msgstr "Lectura de afiliación"
+
+#. module: union_affiliation
+#: model:res.groups,name:union_affiliation.group_affiliation_write
+msgid "Affiliation write"
+msgstr "Escritura de afiliación"
+
+#. module: union_affiliation
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliation_configuration_form
+msgid "Affiliation's configuration"
+msgstr "Configuración de afiliación"
+
+#. module: union_affiliation
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliation_configuration_form
+msgid "Affiliation number configuration"
+msgstr "Configuración de número de afiliación"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__affiliation_date
+msgid "Affiliation's date"
+msgstr "Fecha de afiliación"
+
+#. module: union_affiliation
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_form
+msgid "Affiliation"
+msgstr "Afiliación"
+
+#. module: union_affiliation
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_form
+msgid "Archive"
+msgstr "Archivar"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__message_attachment_count
+msgid "Attachment Count"
+msgstr "Recuento de archivos adjuntos"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__bank_ids
+msgid "Banks"
+msgstr "Bancos"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__birth_country
+msgid "Birth country"
+msgstr "País de nacimiento"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__birth_date
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_child__birth_date
+msgid "Birth date"
+msgstr "Fecha de nacimiento"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__is_blacklisted
+msgid "Blacklist"
+msgstr "Lista negra"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__message_bounce
+msgid "Bounce"
+msgstr "Rebotar"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__personal_id_type__ci
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate_child__personal_id_type__ci
+msgid "CI"
+msgstr "CI"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__channel_ids
+msgid "Channels"
+msgstr "Canales"
+
+#. module: union_affiliation
+#: model:ir.model.fields,help:union_affiliation.field_union_affiliation_affiliate__is_company
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr "Comprueba si el contacto es una empresa, de lo contrario es una persona"
+
+#. module: union_affiliation
+#: model:ir.model.fields,help:union_affiliation.field_union_affiliation_affiliate__employee
+msgid "Check this box if this contact is an Employee."
+msgstr "Marque esta casilla si este contacto es un empleado."
+
+#. module: union_affiliation
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_child_form
+msgid "Child name"
+msgstr "Nombre del hijo"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__affiliate_child_ids
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_form
+msgid "Childs"
+msgstr "Hijos"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__city
+msgid "City"
+msgstr "Ciudad"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_period__closed
+msgid "Closed"
+msgstr "Cerrado"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__color
+msgid "Color Index"
+msgstr "Indice de color"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__commercial_partner_id
+msgid "Commercial Entity"
+msgstr "Entidad comercial"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__company_id
+msgid "Company"
+msgstr "Empresa"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__company_name
+msgid "Company Name"
+msgstr "Nombre de empresa"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__commercial_company_name
+msgid "Company Name Entity"
+msgstr ""
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__company_type
+msgid "Company Type"
+msgstr "Tipo de compañía"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__contact_address
+msgid "Complete Address"
+msgstr ""
+
+#. module: union_affiliation
+#: model:ir.ui.menu,name:union_affiliation.configuration_section
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: union_affiliation
+#: model:ir.model,name:union_affiliation.model_affiliation_affiliation_configuration
+msgid "Configuration of Affiliaton module"
+msgstr "Configuración del módulo de afiliación"
+
+#. module: union_affiliation
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliation_number_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: union_affiliation
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_form
+msgid "Confirm affiliation"
+msgstr "Confirmar afiliación"
+
+#. module: union_affiliation
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_form
+msgid "Confirm dissafiliation"
+msgstr "Confirmar desafiliación"
+
+#. module: union_affiliation
+#: model:ir.model,name:union_affiliation.model_res_partner
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__child_ids
+msgid "Contact"
+msgstr "Contacto" 
+
+#. module: union_affiliation
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_form
+msgid "Contact information"
+msgstr "Información de contacto"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__quote
+msgid "Contributor"
+msgstr "Cotizante"
+
+#. module: union_affiliation
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_search
+msgid "Contributors"
+msgstr "Cotizantes"
+
+#. module: union_affiliation
+#: model:ir.model.fields,help:union_affiliation.field_union_affiliation_affiliate__message_bounce
+msgid "Counter of the number of bounced emails for this contact"
+msgstr "Contador de la cantidad de correos electrónicos devueltos para este contacto"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__country_id
+msgid "Country"
+msgstr "País"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__create_uid
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_child__create_uid
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_type__create_uid
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_configuration__create_uid
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_number__create_uid
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_period__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__create_date
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_child__create_date
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_type__create_date
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_configuration__create_date
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_number__create_date
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_period__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__credit_limit
+msgid "Credit Limit"
+msgstr "Límite de crédito"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__personal_id_type__dni
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate_child__personal_id_type__dni
+msgid "DNI"
+msgstr "DNI"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__personal_id_type__du
+msgid "DU"
+msgstr "DU"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: union_affiliation
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_form
+msgid "Disaffiliate"
+msgstr "Desafiliar"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__state__disaffiliated
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_search
+msgid "Disaffiliated"
+msgstr "Desafiliado"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__disaffiliation_date
+msgid "Disaffiliation's date"
+msgstr "Fecha de desafiliación"
+
+#. module: union_affiliation
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_search
+msgid "Disafilliation date"
+msgstr "Fecha de desafiliación"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__display_name
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_child__display_name
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_type__display_name
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_configuration__display_name
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_number__display_name
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_period__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__civil_status__divorced
+msgid "Divorced"
+msgstr "Divorciado/a"
+
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__email
+msgid "Email"
+msgstr "Email"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__employee
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_type__enabled
+msgid "Enabled"
+msgstr "Habilitado"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__category_bis_id
+msgid "Etiqueta BIS"
+msgstr "Etiqueta BIS"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__gender__female
+msgid "Female"
+msgstr "Femenino"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (canales)"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (socios)"
+
+#. module: union_affiliation
+#: model:ir.model.fields,help:union_affiliation.field_union_affiliation_affiliate__email_formatted
+msgid "Format email address \"Name <email@domain>\""
+msgstr "Dar formato a la dirección de correo electrónico \" Nombre <correo electrónico @ dominio> \""
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__email_formatted
+msgid "Formatted Email"
+msgstr "Correo electrónico formateado"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_period__from_date
+msgid "From"
+msgstr "De"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__gender
+msgid "Gender"
+msgstr "Género"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__partner_latitude
+msgid "Geo Latitude"
+msgstr "Geo Latitud"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__partner_longitude
+msgid "Geo Longitude"
+msgstr "Longitud geográfica"
+
+#. module: union_affiliation
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_child__handicapped
+msgid "Handicapped"
+msgstr "Discapacitado"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__state__historical
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_search
+msgid "Historical"
+msgstr "Histórico"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__id
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_child__id
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_type__id
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_configuration__id
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_number__id
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_period__id
+msgid "ID"
+msgstr "ID"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__im_status
+msgid "IM Status"
+msgstr "Estado de MI"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: union_affiliation
+#: model:ir.model.fields,help:union_affiliation.field_union_affiliation_affiliate__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de excepción."
+
+#. module: union_affiliation
+#: model:ir.model.fields,help:union_affiliation.field_union_affiliation_affiliate__message_needaction
+#: model:ir.model.fields,help:union_affiliation.field_union_affiliation_affiliate__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Si está seleccionada, los mensajes nuevos requieren su atención."
+
+#. module: union_affiliation
+#: model:ir.model.fields,help:union_affiliation.field_union_affiliation_affiliate__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si se marca, algunos mensajes tienen un error de entrega."
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__image_1920
+msgid "Image"
+msgstr "Imagen"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__image_1024
+msgid "Image 1024"
+msgstr "Imagen 1024"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__image_128
+msgid "Image 128"
+msgstr "Imagen 128"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__image_256
+msgid "Image 256"
+msgstr "Imagen 256"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__image_512
+msgid "Image 512"
+msgstr "Imagen 512"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__industry_id
+msgid "Industry"
+msgstr "Industria"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__is_company
+msgid "Is a Company"
+msgstr "Es una empresa"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__function
+msgid "Job Position"
+msgstr "Puesto de trabajo"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__personal_id_type__lc
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate_child__personal_id_type__lc
+msgid "LC"
+msgstr "LC"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__personal_id_type__le
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate_child__personal_id_type__le
+msgid "LE"
+msgstr "LE"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__lang
+msgid "Language"
+msgstr "Idioma"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate____last_update
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_child____last_update
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_type____last_update
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_configuration____last_update
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_number____last_update
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_period____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__write_uid
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_child__write_uid
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_type__write_uid
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_configuration__write_uid
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_number__write_uid
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_period__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__write_date
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_child__write_date
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_type__write_date
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_configuration__write_date
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_number__write_date
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_period__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__log
+msgid "Log"
+msgstr "Log"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjunto principal"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__gender__male
+msgid "Male"
+msgstr "Masculino"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__civil_status
+msgid "Marital status"
+msgstr "Estado civil"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__civil_status__married
+msgid "Married"
+msgstr "Casado/a"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__message_has_error
+msgid "Message Delivery error"
+msgstr "Error en la entrega del mensaje"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__mobile
+msgid "Mobile"
+msgstr "Móvil"
+
+#. module: union_affiliation
+#: model:ir.model,name:union_affiliation.model_affiliation_affiliation_number
+msgid "Model for Affiliation Number wizard"
+msgstr "Asistente para el modelo de número de afiliación"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__name
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_child__name
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_type__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__state__new
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_search
+msgid "New"
+msgstr "Nuevo"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Fecha límite para la próxima actividad"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_configuration__next_affiliation_number
+msgid "Next affiliation number on sequence"
+msgstr "Siguiente número de afiliación en la secuencia."
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_configuration__enable_affiliation_number_sequence
+msgid "Enable affiliation number sequence"
+msgstr "Habilitar número de afiliación automático."
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_configuration__affiliation_number_edition
+msgid "Allow editing affiliation number on start affiliation view."
+msgstr "Permitir la edición del número de afiliación en la ventana de afiliación."
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__email_normalized
+msgid "Normalized Email"
+msgstr "Correo electrónico normalizado"
+
+#. module: union_affiliation
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_search
+msgid "Not Contributors"
+msgstr "No cotizante"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__state__not_affiliated
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_search
+msgid "Not affiliated"
+msgstr "No afiliado"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__civil_status__not_report
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__gender__not_report
+msgid "Not report"
+msgstr "No responde"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__comment
+msgid "Notes"
+msgstr "Notas"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: union_affiliation
+#: model:ir.model.fields,help:union_affiliation.field_union_affiliation_affiliate__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: union_affiliation
+#: model:ir.model.fields,help:union_affiliation.field_union_affiliation_affiliate__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de entrega"
+
+#. module: union_affiliation
+#: model:ir.model.fields,help:union_affiliation.field_union_affiliation_affiliate__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leídos"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__observations
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_child__observation
+msgid "Observations"
+msgstr "Observaciones"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliation_configuration__affiliation_start__on_affiliate
+msgid "On affiliate"
+msgstr "Al afiliar"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliation_configuration__affiliation_start__on_confirm
+msgid "On confirm affiliation"
+msgstr "Al confirmar la afiliación"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliation_configuration__set_disaffiliation_date__on_confirm
+msgid "On confirm disaffiliation"
+msgstr "Al confirmar la desafiliación"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliation_configuration__set_disaffiliation_date__on_disaffiliate
+msgid "On disaffiliate"
+msgstr "Al desafiliar"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__gender__other
+msgid "Other"
+msgstr "Otro"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__email2
+#: model:ir.model.fields,field_description:union_affiliation.field_res_partner__email2
+#: model:ir.model.fields,field_description:union_affiliation.field_res_users__email2
+msgid "Other email"
+msgstr "Otro correo electrónico"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__personal_id_type__pasaporte
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate_child__personal_id_type__pasaporte
+msgid "PASAPORTE"
+msgstr "PASAPORTE"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__parent_name
+msgid "Parent name"
+msgstr "Nombre del padre"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_child__affiliate_ids
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_child_form
+msgid "Parents"
+msgstr "Padres"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__partner_id
+msgid "Partner"
+msgstr "Socio"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__same_vat_partner_id
+msgid "Partner with same Tax ID"
+msgstr "Socio con el mismo número de identificación fiscal"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__state__pending_suscribe
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_search
+msgid "Pending suscribe"
+msgstr "Pendiente de alta"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__state__pending_unsuscribe
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_search
+msgid "Pending unsuscribe"
+msgstr "Pendiente de baja"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliation_period.py:0
+#, python-format
+msgid "Period's end overlapped with other!"
+msgstr "¡El final del período se superpuso con otro!"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliation_period.py:0
+#, python-format
+msgid "Period's init overlapped with other!"
+msgstr "¡El inicio del período se superpuso con otro!"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__personal_id
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_child__personal_id
+msgid "Personal ID"
+msgstr "Nro de documento"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__personal_id_type
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_child__personal_id_type
+msgid "Personal ID type"
+msgstr "Tipo de documento"
+
+#. module: union_affiliation
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_child_form
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_form
+msgid "Personal information"
+msgstr "Información personal"
+
+#. module: union_affiliation
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_child_form
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_form
+msgid "Employment infomation"
+msgstr "Información laboral"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__phone
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__ref
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__parent_id
+msgid "Related Company"
+msgstr "Compañía vinculada"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__user_id
+msgid "Salesperson"
+msgstr "Vendedor"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__self
+msgid "Self"
+msgstr "Yo"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__seniority
+msgid "Seniority"
+msgstr "Antigüedad"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__civil_status__separated
+msgid "Separated"
+msgstr "Separado/a"
+
+#. module: union_affiliation
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_form
+msgid "Set Contributor"
+msgstr "Cambiar estado cotizante"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_configuration__set_disaffiliation_date
+msgid "Set end of affiliation"
+msgstr "Establecer fin de afiliación"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_configuration__affiliation_start
+msgid "Set init of affiliation"
+msgstr "Establecer inicio de afiliación"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__partner_share
+msgid "Share Partner"
+msgstr "Compartir socio"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__civil_status__single
+msgid "Single"
+msgstr "Soltero/a"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__state_id
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_search
+msgid "State"
+msgstr "Estado"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__street
+msgid "Street"
+msgstr "Calle"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__street2
+msgid "Street2"
+msgstr "Calle # 2"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__category_id
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__vat
+msgid "Tax ID"
+msgstr "Identificación del impuesto"
+
+#. module: union_affiliation
+#: model:ir.model.fields,help:union_affiliation.field_union_affiliation_affiliate__user_id
+msgid "The internal user in charge of this contact."
+msgstr "El usuario interno a cargo de este contacto."
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliation_period.py:0
+#, python-format
+msgid "There is already an open period!"
+msgstr "¡Ya hay un período abierto!"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliation_period.py:0
+#, python-format
+msgid "There is already exist a period with the same affiliation number!"
+msgstr "¡Ya existe un período con el mismo número de afiliación!"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate_type.py:0
+#, python-format
+msgid "There is already exist a type with the same name!"
+msgstr "¡Ya existe un tipo con el mismo nombre!"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+#, python-format
+msgid "There is already exist an affiliate with the same uid!"
+msgstr "¡Ya existe un afiliado con el mismo legajo!"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+#, python-format
+msgid "The field 'Employment relationship type' is required when state is not 'new' or 'not_affiliated'."
+msgstr "El 'Tipo de relación laboral' tiene que estar completo."
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__tz
+msgid "Timezone"
+msgstr "Zona horaria"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__tz_offset
+msgid "Timezone offset"
+msgstr "Desplazamiento de zona horaria"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__title
+msgid "Title"
+msgstr "Título"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliation_period__to_date
+msgid "To"
+msgstr "A"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__affiliate_type_id
+#: model_terms:ir.ui.view,arch_db:union_affiliation.union_affiliation_affiliate_search
+msgid "Employment relationship types"
+msgstr "Tipo de relación laboral"
+
+#. module: union_affiliation
+#: model:ir.model.fields,help:union_affiliation.field_union_affiliation_affiliate__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de actividad de excepción registrada."
+
+#. module: union_affiliation
+#: model:ir.ui.menu,name:union_affiliation.union
+msgid "Union"
+msgstr "Sindicato"
+
+#. module: union_affiliation
+#: model:ir.model,name:union_affiliation.model_affiliation_affiliate
+msgid "Union affiliate entity"
+msgstr "Entidad del afiliado/a sindical"
+
+#. module: union_affiliation
+#: model:ir.model,name:union_affiliation.model_affiliation_affiliate_child
+msgid "Union affiliate's child entity"
+msgstr "Entidad del hijo del afiliado/a sindical"
+
+#. module: union_affiliation
+#: model:ir.model,name:union_affiliation.model_affiliation_affiliate_type
+msgid "Union affiliate's type entity"
+msgstr "Entidad de tipo de afiliado/a sindical"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__civil_status__united
+msgid "United"
+msgstr "Unido/a"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes no leídos"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes no leídos"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__user_ids
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_child__verified
+msgid "Verified"
+msgstr "Verificado"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__website
+msgid "Website Link"
+msgstr "Enlace de página web"
+
+#. module: union_affiliation
+#: model:ir.model.fields.selection,name:union_affiliation.selection__affiliation_affiliate__civil_status__widowed
+msgid "Widowed"
+msgstr "Viudo/a"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliation_period.py:0
+#, python-format
+msgid "You can't edit a closed period!"
+msgstr "¡No se puede editar un período cerrado!"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate__zip
+msgid "Zip"
+msgstr "Código Postal"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+#, python-format
+msgid "%s [%s] The field %s change from %s to %s \n"
+msgstr "%s [%s] El campo %s cambió de %s a %s \n"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+#, python-format
+msgid "quote"
+msgstr "Cotizante"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+#, python-format
+msgid "False"
+msgstr "Falso"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+#, python-format
+msgid "state"
+msgstr "Estado"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+#, python-format
+msgid "affiliate_type_id"
+msgstr "Tipo de afiliado"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+#, python-format
+msgid "email"
+msgstr "Email"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+#, python-format
+msgid "phone"
+msgstr "Teléfono"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+#, python-format
+msgid "mobile"
+msgstr "Movil"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+#, python-format
+msgid "affiliation_number"
+msgstr "Nro de afiliación"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+#, python-format
+msgid "not_affiliated"
+msgstr "No afiliado"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+#, python-format
+msgid "new"
+msgstr "Nuevo"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+#, python-format
+msgid "pending_suscribe"
+msgstr "Pendiente de alta"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+#, python-format
+msgid "affiliated"
+msgstr "Afiliado"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+#, python-format
+msgid "pending_unsuscribe"
+msgstr "Pendiente de baja"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+#, python-format
+msgid "disaffiliated"
+msgstr "Desafiliado"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+#, python-format
+msgid "historical"
+msgstr "Historico"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+#, python-format
+msgid "Admin affiliation permission is required to archive records."
+msgstr "Necesitas permiso de administración de afiliados para archivar registros."
+
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+#, python-format
+msgid "Admin affiliation permission is required to unarchive records."
+msgstr "Necesitas permiso de administración de afiliados para desarchivar registros."
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+#, python-format
+msgid "There is already exist an affiliated with the same affiliation number!"
+msgstr "¡Existe un afiliado con el mismo número de afiliación!"
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+#, python-format
+msgid "The sequence next_affiliation_number_seq is not defined."
+msgstr "La secuencia next_affiliation_number_seq no está definida."
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/wizards/affiliation_number.py:0
+#, python-format
+msgid "Affiliation number cannot be 0."
+msgstr "El número de afiliación no puede ser 0."
