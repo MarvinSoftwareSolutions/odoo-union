@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+        <!-- 
+            This will be the only record that will have the table since it is a configuration page.
+        -->
+        <record id="union_affiliation_configuration_default" model="affiliation.affiliation_configuration">
+        </record>
+
+        <record model="ir.ui.view" id="union_affiliation_affiliation_configuration_form">
+            <field name="name">union_affiliation.affiliate_configuration.form</field>
+            <field name="model">affiliation.affiliation_configuration</field>
+            <field name="arch" type="xml">
+                <form create="false" delete="false">
+                    <sheet>
+                        <h2>Affiliation's configuration</h2>
+                        <group>
+                            <field name="affiliation_start"/>
+                            <field name="set_disaffiliation_date"/>
+                        </group>
+                        <separator string="Affiliation number configuration" colspan="0" class="oe_title"/>
+                        <group>
+                            <field name="enable_affiliation_number_sequence"/>
+                            <field name="next_affiliation_number" attrs="{'invisible': [('enable_affiliation_number_sequence', '=', False)]}"/>
+                            <field name="affiliation_number_edition" attrs="{'readonly': [('enable_affiliation_number_sequence', '=', False)]}" context="{'default_affiliation_number_edition': True}"/>
+                        </group>
+                        <separator string=" " colspan="2"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

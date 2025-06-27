@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="union_affiliation_affiliate_child_form">
+            <field name="name">union_affiliation.affiliate_child.form</field>
+            <field name="model">affiliation.affiliate_child</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h2><field name="name" placeholder="Child name"/></h2>
+                        <group string="Personal information">
+                            <field name="personal_id_type" />
+                            <field name="personal_id" />
+                            <field name="birth_date" />
+                            <field name="handicapped" />
+                            <field name="verified" />
+                            <field name="observation" />
+                        </group>
+                        <notebook>
+                            <page string="Parents" name="Parents">
+                                <field name="affiliate_ids"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="union_affiliation_affiliate_child_tree">
+            <field name="name">union_affiliation.affiliate_child.tree</field>
+            <field name="model">affiliation.affiliate_child</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="personal_id_type" />
+                    <field name="personal_id" />
+                    <field name="birth_date" />
+                    <field name="handicapped" />
+                    <field name="verified" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="union_affiliation_affiliate_child_search">
+            <field name="name">union_affiliation.affiliate_child.search</field>
+            <field name="model">affiliation.affiliate_child</field>
+            <field name="arch" type="xml">
+                <search string="Affiliate child filters">
+                    <field name="name" filter_domain="[('name', 'ilike', self)]"/>
+                    <field name="personal_id" filter_domain="[('personal_id', 'ilike', self)]"/>
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>
