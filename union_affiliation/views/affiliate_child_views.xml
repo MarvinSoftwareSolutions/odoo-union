@@ -13,6 +13,7 @@
                             <field name="birth_date" />
                             <field name="handicapped" />
                             <field name="verified" />
+                            <field name="educational_level"/>
                             <field name="observation" />
                         </group>
                         <notebook>
@@ -36,6 +37,7 @@
                     <field name="birth_date" />
                     <field name="handicapped" />
                     <field name="verified" />
+                    <field name="educational_level"/>
                 </tree>
             </field>
         </record>

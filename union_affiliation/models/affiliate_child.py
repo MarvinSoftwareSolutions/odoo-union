@@ -26,6 +26,18 @@ class AffiliateChild(models.Model):
         column1='affiliate_child_id',
         column2='affiliate_id',
         string='Parents'
+    )    
+    educational_level = fields.Selection(
+        selection=[
+            ('none', 'Ninguno'),
+            ('jardin', 'Jardín (4 y 5 años)'),
+            ('primaria_1_3', '1º a 3º grado'),
+            ('primaria_4_6', '4º a 6º grado'),
+            ('secundaria', 'Secundaria'),
+            ('mayor', 'Mayor (finalizado o no aplica)')
+        ],
+        string='Nivel educativo',
+        tracking=True
     )
 
     @api.model
