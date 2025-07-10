@@ -1281,3 +1281,14 @@ msgstr "La secuencia next_affiliation_number_seq no está definida."
 #, python-format
 msgid "Affiliation number cannot be 0."
 msgstr "El número de afiliación no puede ser 0."
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+
+msgid "Reaffiliations"
+msgstr "Reafiliaciones"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:affiliation.affiliate,current_disaffiliation_reason
+msgid "Disaffiliation Reason"
+msgstr "Motivo de desafiliacion"

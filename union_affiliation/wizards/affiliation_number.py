@@ -17,29 +17,23 @@ class AffiliationNumber(models.TransientModel):
     affiliation_number_edition = fields.Boolean(string='Allow editing affiliation number', required=True)
 
     def confirm(self):
+        self.ensure_one()
+
         if self.affiliation_number == 0:
-                raise ValidationError(_("Affiliation number cannot be 0."))
+            raise ValidationError(_("Affiliation number cannot be 0."))
 
-        # write affiliation data
-        _to_write = {'affiliation_number': self.affiliation_number }
-        fields = ['state', 'quote', 'affiliation_date', 'disaffiliation_date']
-        for field in fields:
-            if self.env.context.get(field):
-                _to_write.update({field:self.env.context.get(field)})
-        if self.affiliate_id.disaffiliation_date:
-            _to_write.update({'disaffiliation_date': None})
-        self.affiliate_id.write(_to_write)
+        # Actualizar datos del afiliado a través de método del modelo
+        self.affiliate_id.confirm_affiliation_with_number(
+            affiliation_number=self.affiliation_number,
+            context_updates=self.env.context
+        )
 
-        # increment next affiliation number sequence if it was used
+        # Incrementar la secuencia si fue usada
         if self.enable_affiliation_number_sequence:
-            _seq = self.env['ir.sequence'].search(
-                    [('code', '=', 'next_affiliation_number_seq')])
-            if self.affiliation_number == _seq.number_next_actual:
-                next_affiliaton_number = int(self.env['ir.sequence'].next_by_code('next_affiliation_number_seq'))
-                next_affiliaton_number = next_affiliaton_number + 1
-                # update next affiliation number on configuration
-                _to_write = {'next_affiliation_number': str(next_affiliaton_number)}
-                _config = self.env['affiliation.affiliation_configuration'].browse(1)
-                _config.write(_to_write)
+            seq = self.env['ir.sequence'].search([('code', '=', 'next_affiliation_number_seq')], limit=1)
+            if self.affiliation_number == seq.number_next_actual:
+                # Incrementar dos veces porque la siguiente llamada a `next_by_code()` ya lo hace una vez
+                self.env['ir.sequence'].next_by_code('next_affiliation_number_seq')
+                seq.sudo().write({'number_next_actual': seq.number_next_actual + 1})
 
         self.unlink()
