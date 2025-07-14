@@ -31,6 +31,7 @@
                                 <field name="civil_status"/>
                                 <field name="birth_date"/>
                                 <field name="birth_country"/>
+                                <field name="parent_role"/>
                             </group>
                             <group string="Contact information" name="contact_information">
                                 <field name="email"/>
@@ -52,13 +53,18 @@
                                     <field name="quote" readonly="1" />
                                     <field name="affiliation_date" readonly="1" />
                                     <field name="disaffiliation_date" readonly="1"/>
+                                    <field name="reaffiliation_count" readonly="1"/>
+                                    <field name="current_disaffiliation_reason"
+                                        attrs="{'invisible': [('state', '!=', 'pending_unsuscribe')]}"
+                                        placeholder="Ingrese el motivo de la baja"/>
                                 </group>
                             </page>
                             <page string="Affiliate logs" name="Affiliation_logs">
                                 <field name="log" readonly="1"/>
                             </page>
-                            <page string="Childs" name="Childs">
-                                <field name="affiliate_child_ids"/>
+                            <page string="Childs" name="Childs"  attrs="{'invisible': ['|', ('state', '!=', 'affiliated'), ('parent_role', '=', 'no')]}">
+                                <field name="affiliate_child_ids"
+                                context="{'default_affiliate_ids': [id]}"/>
                             </page>
                         </notebook>
                     </sheet>

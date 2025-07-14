@@ -4,8 +4,7 @@ from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError, UserError
 import logging
 
-log = logging.getLogger(__name__)
-
+log = logging.getLogger()
 
 AFFILIATE_STR_TO_INT = {
     'active': 0, 
@@ -72,6 +71,12 @@ class Affiliate(models.Model):
         string='Affiliate State',
         default='not_affiliated'
     )
+    parent_role = fields.Selection([
+    ('no', 'No'),
+    ('father', 'Padre'),
+    ('mother', 'Madre'),
+    ], 
+    string="Padre/Madre", default='no', required=True)
     affiliation_period_ids = fields.One2many(
         comodel_name='affiliation.affiliation_period',
         inverse_name='affiliate_id',
@@ -90,6 +95,19 @@ class Affiliate(models.Model):
     affiliation_number = fields.Integer(string='Affiliation number')
     affiliation_date = fields.Date(string='Affiliation\'s date')
     disaffiliation_date = fields.Date(string='Disaffiliation\'s date')
+    
+    reaffiliation_count = fields.Integer(
+        string=_('Reaffiliations'), # TODO revisar por que no traduce al ingles
+        compute='_compute_reaffiliation_count',
+        store=True
+    )
+    current_disaffiliation_reason = fields.Char(
+        string='Motivo de desafiliación', # TODO revisar por que no se traduce al español
+        compute='_compute_current_disaffiliation_reason',
+        inverse='_inverse_current_disaffiliation_reason',
+        store=False,
+    )
+
     seniority = fields.Date(string='Seniority')
 
     # EtiquetaBis
@@ -101,26 +119,71 @@ class Affiliate(models.Model):
         string='Etiqueta BIS'
     )
 
+
+    def _compute_current_disaffiliation_reason(self):
+        for record in self:
+            rec.current_disaffiliation_reason = record._get_current_period().disaffiliation_reason if rec._get_current_period() else ''
+
+    def _inverse_current_disaffiliation_reason(self):
+        for record in self:
+            period = rec._get_current_period()
+            if period:
+                period.disaffiliation_reason = record.current_disaffiliation_reason
+
     @api.constrains('uid')
     def _check_uid(self):
-        other = self.env['affiliation.affiliate'].search(
-            [('uid', '=', self.uid)])
-        if len(other.ids) > 1 or (len(other) == 1 and other[0].id != self.id):
-            raise ValidationError(
-                _('There is already exist an affiliate with the same uid!'))
+        for record in self:
+            other = record.search([('uid', '=', record.uid)])
+            if len(other.ids) > 1 or (len(other) == 1 and other.id != record.id):
+                raise ValidationError(_('There is already an affiliate with the same uid!'))
 
     @api.constrains('affiliation_number')
     def _check_affiliation_number(self):
-        if self.affiliation_number:
-            other = self.env['affiliation.affiliate'].search([('affiliation_number','=',self.affiliation_number)])
-            if len(other.ids) > 1 or (len(other) == 1 and other[0].id != self.id):
-                raise ValidationError(_("There is already exist an affiliated with the same affiliation number!"))
+        for record in self:
+            if record.affiliation_number:
+                other = record.search([('affiliation_number', '=', record.affiliation_number)])
+                if len(other.ids) > 1 or (len(other) == 1 and other.id != record.id):
+                    raise ValidationError(_('There is already an affiliate with the same affiliation number!'))
 
     @api.constrains('state', 'affiliate_type_id')
     def _check_affiliate_type_id(self):
         for record in self:
             if record.state not in ('new', 'not_affiliated') and not record.affiliate_type_id:
                 raise ValidationError(_("The field 'Employment relationship type' is required when state is not 'new' or 'not_affiliated'."))
+
+    def _log_change_field(self, vals):
+        loggables = ['state', 'quote', 'affiliate_type_id', 'email', 'phone', 'mobile', 'affiliation_number']
+        for record in self:
+            log_lines = []
+            for field in vals:
+                if field in loggables:
+                    old_value = record[field]
+                    new_value = vals.get(field)
+                    log_lines.append(
+                        _('%s [%s] The field %s changed from %s to %s') % (
+                            fields.Date.today().strftime('%Y-%m-%d'),
+                            record.env.user.name,
+                            _(field),
+                            _(old_value),
+                            _(new_value)
+                        )
+                    )
+            if log_lines:
+                full_log = '\n'.join(log_lines)
+                vals['log'] = (full_log + '\n' + record.log) if record.log else full_log
+
+
+    @api.constrains('parent_role')
+    def _check_parent_role_children(self):
+        for record in self:
+            if record.parent_role == 'no' and record.affiliate_child_ids:
+                raise ValidationError(_("You cannot set the parental role to 'No' if there are registered children."))
+
+
+    @api.depends('affiliation_period_ids')
+    def _compute_reaffiliation_count(self):
+        for record in self:
+            record.reaffiliation_count = max(0, len(record.affiliation_period_ids) - 1)
 
     # This method is necessary for RPC importation
     @api.model
@@ -207,6 +270,49 @@ class Affiliate(models.Model):
             'context': _to_write
         }
 
+    def confirm_affiliation_with_number(self, affiliation_number, context_updates=None):
+        """Aplica la afiliación, setea datos y crea un período."""
+
+        self.ensure_one()
+
+        values = {
+            'affiliation_number': affiliation_number,
+        }
+
+        # Actualizar campos desde el contexto si existen
+        fields_from_context = ['state', 'quote', 'affiliation_date', 'disaffiliation_date']
+        context_updates = context_updates or {}
+        for field in fields_from_context:
+            if field in context_updates:
+                values[field] = context_updates[field]
+
+        # Resetear disaffiliation_date si existía
+        if self.disaffiliation_date:
+            values['disaffiliation_date'] = None
+
+        # Aplicar cambios al afiliado
+        self.write(values)
+
+        # Crear el período de afiliación correspondiente
+        self.env['affiliation.affiliation_period'].create({
+            'affiliate_id': self.id,
+            'affiliation_number': affiliation_number,
+            'from_date': fields.Datetime.now(),
+        })
+
+
+    def close_current_affiliation_period(self, close_date=None):
+        self.ensure_one()
+        close_date = close_date or fields.Datetime.now()
+        period = self.affiliation_period_ids.filtered(lambda p: not p.closed)
+        print("aca")
+        log.info("Períodos abiertos encontrados: %s", period)
+        if period:
+            period.write({
+                'to_date': close_date,
+                'closed': True,
+            })
+
     def disaffiliate_(self):
         _config = self.env['affiliation.affiliation_configuration'].browse(1)
         _to_write = {'state': 'pending_unsuscribe'}
@@ -224,6 +330,9 @@ class Affiliate(models.Model):
             _to_write.update({'quote': False})
 
         self.write(_to_write)
+        log.info("close_current_affiliation_period called")
+        # Cerrar período abierto
+        self.close_current_affiliation_period()
 
     def archive_(self):
         self.state = 'historical'
@@ -243,18 +352,6 @@ class Affiliate(models.Model):
         if not _period.closed:
             return _period
         return False
-
-    def _log_change_field(self, vals):
-        _loggables = ['state', 'quote', 'affiliate_type_id',
-                    'email', 'phone', 'mobile', 'affiliation_number']
-        for record in self:
-            _log = ''
-            for field in vals:
-                if field in _loggables:
-                    _log = _('%s [%s] The field %s change from %s to %s \n') % (str(fields.Date.today(
-                    )), record.env.user.name, _(field), _(record[field]), _(str(vals[field]))) + _log
-            _log = _log + record.log if record.log else _log
-            vals.update({'log': _log})
 
     @api.model
     def _name_search(self, name, args=None, operator='ilike', limit=100):

@@ -34,7 +34,7 @@
         sequence="20" parent="union_affiliation.affiliates_section" 
         action="union_affiliation_affiliate_emails_list_action"
         groups="group_affiliation_emails"/>
-
+<!-- 
     <record model="ir.actions.act_window" id="union_affiliation_affiliate_child_list_action">
         <field name="name">Affiliate's childs</field>
         <field name="res_model">affiliation.affiliate_child</field>
@@ -46,7 +46,7 @@
         id="union_affiliation_affiliate_child_list" 
         sequence="30" parent="union_affiliation.affiliates_section" 
         action="union_affiliation_affiliate_child_list_action"
-        groups="group_affiliation_read"/>
+        groups="base.group_no_one"/> -->
 
     <record model="ir.actions.act_window" id="union_affiliation_affiliate_type_list_action">
         <field name="name">Employment relationship types</field>
