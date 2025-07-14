@@ -5,7 +5,6 @@ from odoo.exceptions import ValidationError, UserError
 import logging
 
 log = logging.getLogger()
-log.propagate = True
 
 AFFILIATE_STR_TO_INT = {
     'active': 0, 
@@ -122,14 +121,14 @@ class Affiliate(models.Model):
 
 
     def _compute_current_disaffiliation_reason(self):
-        for rec in self:
-            rec.current_disaffiliation_reason = rec._get_current_period().disaffiliation_reason if rec._get_current_period() else ''
+        for record in self:
+            rec.current_disaffiliation_reason = record._get_current_period().disaffiliation_reason if rec._get_current_period() else ''
 
     def _inverse_current_disaffiliation_reason(self):
-        for rec in self:
+        for record in self:
             period = rec._get_current_period()
             if period:
-                period.disaffiliation_reason = rec.current_disaffiliation_reason
+                period.disaffiliation_reason = record.current_disaffiliation_reason
 
     @api.constrains('uid')
     def _check_uid(self):
@@ -331,7 +330,6 @@ class Affiliate(models.Model):
             _to_write.update({'quote': False})
 
         self.write(_to_write)
-        print("acaa")
         log.info("close_current_affiliation_period called")
         # Cerrar período abierto
         self.close_current_affiliation_period()

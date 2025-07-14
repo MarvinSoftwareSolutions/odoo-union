@@ -88,11 +88,3 @@ class AffiliationPeriod(models.Model):
     # ---------- BUSINESS ----------
     def close(self, date):
         self.write({'to_date': date, 'closed': True})
-
-    # @api.depends('to_date')
-    # def _compute_closed(self):
-    #     for record in self:
-    #         if record.to_date:
-    #             record.closed = True
-    #             return
-    #         record.closed = False
