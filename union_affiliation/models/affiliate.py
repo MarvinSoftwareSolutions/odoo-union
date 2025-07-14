@@ -122,11 +122,11 @@ class Affiliate(models.Model):
 
     def _compute_current_disaffiliation_reason(self):
         for record in self:
-            rec.current_disaffiliation_reason = record._get_current_period().disaffiliation_reason if rec._get_current_period() else ''
+            record.current_disaffiliation_reason = record._get_current_period().disaffiliation_reason if record._get_current_period() else ''
 
     def _inverse_current_disaffiliation_reason(self):
         for record in self:
-            period = rec._get_current_period()
+            period = record._get_current_period()
             if period:
                 period.disaffiliation_reason = record.current_disaffiliation_reason
 
