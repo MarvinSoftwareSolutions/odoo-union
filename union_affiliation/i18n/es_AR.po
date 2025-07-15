@@ -1292,3 +1292,8 @@ msgstr "Reafiliaciones"
 #: model:ir.model.fields,field_description:affiliation.affiliate,current_disaffiliation_reason
 msgid "Disaffiliation Reason"
 msgstr "Motivo de desafiliacion"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_child__affiliate_names
+msgid "Parents"
+msgstr "Padres"
