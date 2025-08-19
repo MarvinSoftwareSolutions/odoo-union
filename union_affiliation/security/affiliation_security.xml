@@ -1,23 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+    <!-- Definir la categoría de módulo para agrupar los permisos -->
+    <record id="module_category_affiliation" model="ir.module.category">
+        <field name="name">Sindicato</field>
+        <field name="description">Gestión de permisos del sindicato</field>
+        <field name="sequence">50</field>
+    </record>
+
+    <!-- Grupos organizados jerárquicamente con category_id -->
     <record id="group_affiliation_read" model="res.groups">
-        <field name="name">Affiliation read</field>
+        <field name="name">Read</field>
+        <field name="category_id" ref="module_category_affiliation"/>
         <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
     </record>
 
     <record id="group_affiliation_write" model="res.groups">
-        <field name="name">Affiliation write</field>
+        <field name="name">Write</field>
+        <field name="category_id" ref="module_category_affiliation"/>
         <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
         <field name="implied_ids" eval="[(4, ref('group_affiliation_read'))]"/>
     </record>
 
     <record id="group_affiliation_admin" model="res.groups">
-        <field name="name">Affiliation admin</field>
+        <field name="name">Administrator</field>
+        <field name="category_id" ref="module_category_affiliation"/>
         <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
         <field name="implied_ids" eval="[(4, ref('group_affiliation_write'))]"/>
     </record>
 
+    <!-- Grupos adicionales como booleanos separados (sin category_id) -->
     <record id="group_affiliation_change_state" model="res.groups">
         <field name="name">Affiliation change state</field>
         <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
