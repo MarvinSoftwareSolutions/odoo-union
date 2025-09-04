@@ -17,6 +17,10 @@ class Affiliate(models.Model):
     _description = 'Union affiliate entity'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
+    first_name = fields.Char(string='Nombre', required=True)
+    last_name = fields.Char(string='Apellido', required=True)
+
+
     partner_id = fields.Many2one(
         comodel_name='res.partner',
         string='Partner',
@@ -119,7 +123,6 @@ class Affiliate(models.Model):
         string='Etiqueta BIS'
     )
 
-
     def _compute_current_disaffiliation_reason(self):
         for record in self:
             record.current_disaffiliation_reason = record._get_current_period().disaffiliation_reason if record._get_current_period() else ''
@@ -185,16 +188,25 @@ class Affiliate(models.Model):
         for record in self:
             record.reaffiliation_count = max(0, len(record.affiliation_period_ids) - 1)
 
-    # This method is necessary for RPC importation
+
     @api.model
     def create(self, vals):
-        res = super(Affiliate, self).create(vals)
-        return res
+        # Asegurarse de setear 'name' antes de crear el partner
+        if 'first_name' in vals or 'last_name' in vals:
+            first = vals.get('first_name', '')
+            last = vals.get('last_name', '')
+            vals['name'] = f"{first} {last}".strip()
+        return super().create(vals)
 
     def write(self, vals):
+        # Actualizar 'name' si se cambian first_name o last_name
         self._log_change_field(vals)
-        res = super(Affiliate, self).write(vals)
-        return res
+        if 'first_name' in vals or 'last_name' in vals:
+            for record in self:
+                first = vals.get('first_name', record.first_name)
+                last = vals.get('last_name', record.last_name)
+                vals['name'] = f"{first} {last}".strip()
+        return super().write(vals)
 
     def unlink(self):
         self.partner_id.unlink()
