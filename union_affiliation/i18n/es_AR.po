@@ -1091,8 +1091,8 @@ msgstr "Tipo de actividad de excepción registrada."
 
 #. module: union_affiliation
 #: model:ir.ui.menu,name:union_affiliation.union
-msgid "Union"
-msgstr "Sindicato"
+msgid "Administration"
+msgstr "Administración"
 
 #. module: union_affiliation
 #: model:ir.model,name:union_affiliation.model_affiliation_affiliate

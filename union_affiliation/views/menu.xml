@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <menuitem name="Union" id="union_affiliation.union" sequence="40" 
+    <menuitem name="Administration" id="union_affiliation.union" sequence="40" 
         groups="group_affiliation_read"/>
 
     <!-- Affiliates section -->
