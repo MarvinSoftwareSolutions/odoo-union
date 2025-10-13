@@ -6,7 +6,7 @@
 
     <!-- Affiliates section -->
     <menuitem name="Affiliates" id="union_affiliation.affiliates_section" 
-        sequence="10" parent="union_affiliation.union" 
+        sequence="1" parent="union_affiliation.union" 
         groups="group_affiliation_read"/>
 
     <record model="ir.actions.act_window" id="union_affiliation_affiliate_list_action">
