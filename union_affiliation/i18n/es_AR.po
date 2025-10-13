@@ -1297,3 +1297,8 @@ msgstr "Motivo de desafiliacion"
 #: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_child__affiliate_names
 msgid "Parents"
 msgstr "Padres"
+
+#. module: base
+#: model:res.partner,field:name
+msgid "Name"
+msgstr "Nombre completo"

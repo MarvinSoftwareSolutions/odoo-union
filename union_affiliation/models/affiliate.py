@@ -27,7 +27,7 @@ class Affiliate(models.Model):
         ondelete='cascade',
         required=True
     )
-    uid = fields.Char(string='Affiliate UID', required=True)
+    uid = fields.Integer(string='Affiliate UID', required=True)
     personal_id_type = fields.Selection([
         ('dni', 'DNI'),
         ('du', 'DU'),
