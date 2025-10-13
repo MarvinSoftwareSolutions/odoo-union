@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-
+from odoo.exceptions import ValidationError
 
 class AffiliateChild(models.Model):
     _name = 'affiliation.affiliate_child'
@@ -27,6 +27,11 @@ class AffiliateChild(models.Model):
         column2='affiliate_id',
         string='Parents'
     )    
+    affiliate_names = fields.Char(
+        string="Parents",
+        compute="_compute_affiliate_names",
+        store=False
+    )
     educational_level = fields.Selection(
         selection=[
             ('none', 'Ninguno'),
@@ -40,9 +45,23 @@ class AffiliateChild(models.Model):
         tracking=True
     )
 
+
+    @api.constrains('affiliate_ids')
+    def _check_has_affiliate(self):
+        for child in self:
+            if not child.affiliate_ids:
+                raise ValidationError(('Each child must be linked to at least one affiliate.'))
+
+
     @api.model
     def name_search(self, name, args=None, operator='ilike', limit=100):
         args = args or []
         domain = ['|',('personal_id', operator, name),('name', operator, name)]
         recs = self.search(domain + args, limit=limit)
         return recs.name_get()
+
+
+    @api.depends('affiliate_ids.name')
+    def _compute_affiliate_names(self):
+        for record in self:
+            record.affiliate_names = ', '.join(record.affiliate_ids.mapped('name'))

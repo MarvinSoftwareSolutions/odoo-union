@@ -1091,8 +1091,8 @@ msgstr "Tipo de actividad de excepción registrada."
 
 #. module: union_affiliation
 #: model:ir.ui.menu,name:union_affiliation.union
-msgid "Union"
-msgstr "Sindicato"
+msgid "Administration"
+msgstr "Administración"
 
 #. module: union_affiliation
 #: model:ir.model,name:union_affiliation.model_affiliation_affiliate
@@ -1281,3 +1281,24 @@ msgstr "La secuencia next_affiliation_number_seq no está definida."
 #, python-format
 msgid "Affiliation number cannot be 0."
 msgstr "El número de afiliación no puede ser 0."
+
+#. module: union_affiliation
+#: code:addons/union_affiliation/models/affiliate.py:0
+
+msgid "Reaffiliations"
+msgstr "Reafiliaciones"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:affiliation.affiliate,current_disaffiliation_reason
+msgid "Disaffiliation Reason"
+msgstr "Motivo de desafiliacion"
+
+#. module: union_affiliation
+#: model:ir.model.fields,field_description:union_affiliation.field_affiliation_affiliate_child__affiliate_names
+msgid "Parents"
+msgstr "Padres"
+
+#. module: base
+#: model:res.partner,field:name
+msgid "Name"
+msgstr "Nombre completo"

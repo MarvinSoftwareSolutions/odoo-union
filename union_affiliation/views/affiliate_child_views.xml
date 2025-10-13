@@ -18,7 +18,10 @@
                         </group>
                         <notebook>
                             <page string="Parents" name="Parents">
-                                <field name="affiliate_ids"/>
+                                <group>
+                                    <field name="affiliate_names" string="Parents" readonly="1"/> 
+                                    <!-- TODO: check why the parents' names don't update instantly -->
+                                </group>
                             </page>
                         </notebook>
                     </sheet>

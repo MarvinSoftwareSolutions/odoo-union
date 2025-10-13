@@ -8,7 +8,7 @@
     'category': 'Union',
     'version': '1.0',
     "license": "AGPL-3",
-    'depends': ['base','mail'],
+    'depends': ['base', 'mail'],
     'data': [
         'security/affiliation_security.xml',
         'security/ir.model.access.csv',

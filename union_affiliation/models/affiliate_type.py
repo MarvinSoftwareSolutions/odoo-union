@@ -16,6 +16,6 @@ class AffiliateType(models.Model):
         filter = [('name','=',self.name)]
         if self.id:
             filter.append(('id','!=', self.id))
-        other = self.env['affiliation.affiliate_type'].search(filter)
+        other = self.search(filter)
         if len(other.ids):
             raise ValidationError(_('There is already exist a type with the same name!'))

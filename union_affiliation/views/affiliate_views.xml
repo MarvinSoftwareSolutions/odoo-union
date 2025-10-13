@@ -1,25 +1,43 @@
 <odoo>
     <data>
+
         <record model="ir.ui.view" id="union_affiliation_affiliate_form">
             <field name="name">union_affiliation.affiliate.form</field>
             <field name="model">affiliation.affiliate</field>
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <button string="Affiliate" class="btn btn-primary" type="object" name="affiliate_" states="disaffiliated,historical,not_affiliated,new" groups="union_affiliation.group_affiliation_change_state"/>
-                        <button string="Set Contributor" class="btn btn-primary" type="object" name="set_contributor" states="affiliated" groups="union_affiliation.group_affiliation_change_quote"/>
-                        <button string="Confirm affiliation" class="btn btn-secondary" type="object" name="confirm_affiliation_" states="pending_suscribe" groups="union_affiliation.group_affiliation_change_state"/>
-                        <button string="Disaffiliate" class="btn btn-secondary" type="object" name="disaffiliate_" states="affiliated" groups="union_affiliation.group_affiliation_change_state"/>
-                        <button string="Confirm dissafiliation" class="btn btn-secondary" type="object" name="confirm_dissafiliation_" states="pending_unsuscribe" groups="union_affiliation.group_affiliation_change_state"/>
-                        <button string="Archive" class="btn btn-secondary" type="object" name="archive_" states="affiliated" groups="union_affiliation.group_affiliation_change_state"/>
+                        <!-- Cabecera: nombre completo -->
+                        <field name="name" readonly="1"/>
+                        
+                        <!-- Botones existentes -->
+                        <button string="Affiliate" class="btn btn-primary" type="object" name="affiliate_" 
+                                states="disaffiliated,historical,not_affiliated,new" 
+                                groups="union_affiliation.group_affiliation_change_state"/>
+                        <button string="Set Contributor" class="btn btn-primary" type="object" name="set_contributor" 
+                                states="affiliated" groups="union_affiliation.group_affiliation_change_quote"/>
+                        <button string="Confirm affiliation" class="btn btn-secondary" type="object" name="confirm_affiliation_" 
+                                states="pending_suscribe" groups="union_affiliation.group_affiliation_change_state"/>
+                        <button string="Disaffiliate" class="btn btn-secondary" type="object" name="disaffiliate_" 
+                                states="affiliated" groups="union_affiliation.group_affiliation_change_state"/>
+                        <button string="Confirm dissafiliation" class="btn btn-secondary" type="object" name="confirm_dissafiliation_" 
+                                states="pending_unsuscribe" groups="union_affiliation.group_affiliation_change_state"/>
+                        <button string="Archive" class="btn btn-secondary" type="object" name="archive_" 
+                                states="affiliated" groups="union_affiliation.group_affiliation_change_state"/>
                         <field name="state" widget="statusbar" />
                     </header>
+
                     <sheet>
-                        <h2>
-                            <field name="name"/>
-                        </h2>
+                        <!-- Campos Nombre y Apellido -->
                         <group>
-                            <group string="Employment infomation" name="personal_information">
+                            <group>
+                                <field name="first_name" placeholder="Nombre"/>
+                                <field name="last_name" placeholder="Apellido"/>
+                            </group>
+                        </group>
+
+                        <group>
+                            <group string="Employment information" name="personal_information">
                                 <field name="uid" attrs="{'readonly': [('state','in',['pending_suscribe','affiliated','pending_unsuscribe','disaffiliated','historical'])]}"/>
                                 <field name="affiliate_type_id"/>
                                 <field name="seniority" string="Antigüedad"/>
@@ -31,6 +49,7 @@
                                 <field name="civil_status"/>
                                 <field name="birth_date"/>
                                 <field name="birth_country"/>
+                                <field name="parent_role"/>
                             </group>
                             <group string="Contact information" name="contact_information">
                                 <field name="email"/>
@@ -45,6 +64,7 @@
                                 <field name="category_bis_id" widget="many2many_tags"/>
                             </group>
                         </group>
+
                         <notebook>
                             <page string="Affiliation" name="Affiliation">
                                 <group>
@@ -52,13 +72,21 @@
                                     <field name="quote" readonly="1" />
                                     <field name="affiliation_date" readonly="1" />
                                     <field name="disaffiliation_date" readonly="1"/>
+                                    <field name="reaffiliation_count" readonly="1"/>
+                                    <field name="current_disaffiliation_reason"
+                                        attrs="{'invisible': [('state', '!=', 'pending_unsuscribe')]}"
+                                        placeholder="Ingrese el motivo de la baja"/>
                                 </group>
                             </page>
+
                             <page string="Affiliate logs" name="Affiliation_logs">
                                 <field name="log" readonly="1"/>
                             </page>
-                            <page string="Childs" name="Childs">
-                                <field name="affiliate_child_ids"/>
+
+                            <page string="Childs" name="Childs"  
+                                  attrs="{'invisible': ['|', ('state', '!=', 'affiliated'), ('parent_role', '=', 'no')]}">
+                                <field name="affiliate_child_ids"
+                                       context="{'default_affiliate_ids': [id]}"/>
                             </page>
                         </notebook>
                     </sheet>
@@ -68,7 +96,6 @@
                         <field name="activity_ids" widget="mail_activity"/>
                         <field name="message_ids" widget="mail_thread"/>
                     </div>
-
                 </form>
             </field>
         </record>
@@ -78,7 +105,8 @@
             <field name="model">affiliation.affiliate</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="name" />
+                    <field name="first_name" />
+                    <field name="last_name" />
                     <field name="uid" />
                     <field name="affiliate_type_id" />
                     <field name="personal_id" />
