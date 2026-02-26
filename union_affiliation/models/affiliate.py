@@ -195,7 +195,7 @@ class Affiliate(models.Model):
         if 'first_name' in vals or 'last_name' in vals:
             first = vals.get('first_name', '')
             last = vals.get('last_name', '')
-            vals['name'] = f"{first} {last}".strip()
+            vals['name'] = f"{last} {first}".strip()
         return super().create(vals)
 
     def write(self, vals):
@@ -205,7 +205,7 @@ class Affiliate(models.Model):
             for record in self:
                 first = vals.get('first_name', record.first_name)
                 last = vals.get('last_name', record.last_name)
-                vals['name'] = f"{first} {last}".strip()
+                vals['name'] = f"{last} {first}".strip()
         return super().write(vals)
 
     def unlink(self):
