@@ -31,8 +31,8 @@
                         <!-- Campos Nombre y Apellido -->
                         <group>
                             <group>
-                                <field name="first_name" placeholder="Nombre"/>
                                 <field name="last_name" placeholder="Apellido"/>
+                                <field name="first_name" placeholder="Nombre"/>
                             </group>
                         </group>
 
@@ -105,8 +105,8 @@
             <field name="model">affiliation.affiliate</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="first_name" />
                     <field name="last_name" />
+                    <field name="first_name" />
                     <field name="uid" />
                     <field name="affiliate_type_id" />
                     <field name="personal_id" />
