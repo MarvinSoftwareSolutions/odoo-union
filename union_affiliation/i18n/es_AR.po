@@ -1298,7 +1298,3 @@ msgstr "Motivo de desafiliacion"
 msgid "Parents"
 msgstr "Padres"
 
-#. module: base
-#: model:res.partner,field:name
-msgid "Name"
-msgstr "Nombre completo"
