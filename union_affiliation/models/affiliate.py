@@ -366,20 +366,18 @@ class Affiliate(models.Model):
         return False
 
     @api.model
-    def _name_search(self, name, args=None, operator='ilike', limit=100):
-        args = args or []
+    def _name_search(self, name='', args=None, operator='ilike', limit=100, name_get_uid=None):
+        """Extiende la búsqueda para que matchee personal_id, name o uid."""
+        args = list(args or [])
         if not name:
-            return super()._name_search(name, args, operator, limit)
+            return super()._name_search(name, args, operator, limit, name_get_uid)
 
-        domain = ['|', '|', 
+        domain = ['|', '|',
                 ('personal_id', operator, name),
-                ('name', operator, name), 
+                ('name', operator, name),
                 ('uid', operator, name)]
-        
-        recs = self.search(domain + args, limit=limit)
-        if not recs:
-            return []
-        return recs.name_get()
+
+        return self._search(domain + args, limit=limit, access_rights_uid=name_get_uid)
 
     def _message_get_suggested_recipients(self):
         recipients = super(Affiliate, self)._message_get_suggested_recipients()
