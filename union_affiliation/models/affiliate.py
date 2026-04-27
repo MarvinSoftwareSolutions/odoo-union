@@ -20,6 +20,24 @@ class Affiliate(models.Model):
     first_name = fields.Char(string='Nombre', required=True)
     last_name = fields.Char(string='Apellido', required=True)
 
+    # WORKAROUND: el field `name` (heredado de res.partner via _inherits) tiene
+    # string="Nombre", igual que `first_name`. Eso hace que el quick export del tree
+    # genere dos columnas con el mismo header "Nombre", lo cual confunde la
+    # re-importación. Como solución temporal usamos este field computed con
+    # string="Apellido y Nombre" para mostrarlo en el tree en lugar de `name`.
+    # TODO: cambiar el string en el lugar correcto (override de _inherits o
+    # cambiar `string` de uno de los dos fields) y eliminar este workaround.
+    display_full_name = fields.Char(
+        string='Apellido y Nombre',
+        compute='_compute_display_full_name',
+        store=True,
+    )
+
+    @api.depends('first_name', 'last_name')
+    def _compute_display_full_name(self):
+        for record in self:
+            record.display_full_name = f"{record.last_name or ''} {record.first_name or ''}".strip()
+
 
     partner_id = fields.Many2one(
         comodel_name='res.partner',
