@@ -390,10 +390,15 @@ class Affiliate(models.Model):
         if not name:
             return super()._name_search(name, args, operator, limit, name_get_uid)
 
-        domain = ['|', '|',
+        domain = ['|',
                 ('personal_id', operator, name),
-                ('name', operator, name),
-                ('uid', operator, name)]
+                ('name', operator, name)]
+        # uid es Integer: incluirlo solo con términos numéricos. Con texto,
+        # el ORM intenta int(name) y revienta — p. ej. al importar un M2O
+        # por nombre, que resuelve con operator '=' (no pasa con ilike
+        # porque castea la columna a texto).
+        if name.isdigit():
+            domain = ['|'] + domain + [('uid', operator, name)]
 
         return self._search(domain + args, limit=limit, access_rights_uid=name_get_uid)
 
